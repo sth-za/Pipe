@@ -2,6 +2,7 @@
 A Hybrid Stream &amp; Dynamic Buffer for C, which attaches to Socket file descriptors. (Tested on Linux / FreeBSD / QNX) 
 
 
+`
 typedef struct Pipe
 {
 	int id;
@@ -26,19 +27,19 @@ typedef struct Pipe
 
 	int status;
 } Pipe;
-
+`
 
 
 void pipeDebug(Pipe *pipe);
 void pipeDestroy(Pipe *pipe);
 
-** Allocate a new pipe ** 
+**Allocate a new pipe** 
 Pipe *pipeCreate();
 
-** ttach to a File Descriptor ** 
+**Attach to a File Descriptor ** 
 void pipeAttachNetSocket(Pipe *pipe, int socket);
 
-**  Manually expand buffers ** 
+**Manually expand buffers** 
 void pipeExpandInBuffer(Pipe *pipe, int len);
 void pipeExpandOutBuffer(Pipe *pipe, int len);
 
