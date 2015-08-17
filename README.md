@@ -1,30 +1,30 @@
 # Pipe
 A Hybrid Stream &amp; Dynamic Buffer for C, which attaches to Socket file descriptors. (Tested on Linux / FreeBSD / QNX) 
 
-			typedef struct Pipe
-			{
-				int id;
-				int type;
-				int socket;
-
-				void *in;
-				int offset_in;
-				int len_in;
-
-				/* Parser */
-				int rx_offset; //Actual Receive offset of the Packet Filter	
-				int rx_status;
-				int TypeID;
-				int PacketLen;
-				int PacketOffset;
-
-				void *out;
-				int offset_out;
-				int len_out;
-				int tx_offset; //Transmit offset
-
-				int status;
-			} Pipe;
+	typedef struct Pipe
+	{
+		int id;
+		int type;
+		int socket;
+	
+		void *in;
+		int offset_in;
+		int len_in;
+	
+		/* Parser */
+		int rx_offset; //Actual Receive offset of the Packet Filter	
+		int rx_status;
+		int TypeID;
+		int PacketLen;
+		int PacketOffset;
+	
+		void *out;
+		int offset_out;
+		int len_out;
+		int tx_offset; //Transmit offset
+	
+		int status;
+	} Pipe;
 
 void pipeDebug(Pipe *pipe);
 void pipeDestroy(Pipe *pipe);
